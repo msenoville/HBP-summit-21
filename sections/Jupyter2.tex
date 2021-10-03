@@ -1,0 +1,86 @@
+\definecolor{pyblue}{RGB}{11, 87, 168}
+\definecolor{pygreen}{RGB}{15, 127, 18}
+\definecolor{pyred}{RGB}{184, 35, 39}
+\definecolor{pyjup}{RGB}{176, 176, 176}
+
+
+\begin{myblock2}{\Large Access through Jupyter Notebooks\phantom{\Huge $\beta$}}
+    
+	% \vskip+40mm
+	% \tikzmark{ptd}
+
+	% \begin{tikzpicture}[remember picture,overlay]
+	% 	\node[xshift=-4mm,yshift=-2mm] {
+	% 		\adjincludegraphics[trim={0 {.0\height} 0 {.00\height}}, clip, width=0.44\textwidth, cfbox=black 0.1pt 0pt 0pt]{\imgpath/jupyter_lab_screen4.png}
+	% 	};
+	% \end{tikzpicture}
+	\begin{columns}[t]
+		\column{.40\textwidth}
+		% \begin{tikzpicture}[remember picture,overlay]
+		% 	% \node[xshift=-4mm,yshift=-2mm] {
+		% 		\adjincludegraphics[trim={0 {.0\height} 0 {.00\height}}, clip, width=0.55\textwidth, cfbox=black 0.1pt 0pt 0pt]{\imgpath/jupyter_lab_screen4.png}
+		% 	% };
+		% \end{tikzpicture}
+			\vskip-8mm
+		\begin{figure}[t]
+			% \centering
+			\adjincludegraphics[trim={0 {.0\height} 0 {.00\height}}, clip, width=1.02\textwidth, cfbox=black 0.1pt 0pt 0pt]{\imgpath/jupyter_lab_screen4.png}
+		\end{figure}
+		\column{.50\textwidth}
+		\normalsize
+		\vskip4mm
+		Batch mode via a Jupyter Notebook\\[-8mm]
+		\begin{columns}[t]
+			\column{.040\textwidth}
+		
+			\column{.960\textwidth}
+				\begin{itemize}
+					\item[$\rhd$] in the EBRAINS Collab ("Lab")
+					\item[$\rhd$] on local computer\\[12mm]
+				\end{itemize}
+		\end{columns}
+		\vskip8mm
+		Requires the use of a \textbf{Python Client}: the model is sent as file to the neuromorphic systems, then executed and the results are sent back as files.\\[12pt]
+		    
+		% \footnotesize
+		\underline{Installing the Python client}\\[6mm]
+		{
+			\fontsize{22}{24}\selectfont
+			\texttt{\textbf{\$ pip install hbp\_neuromorphic\_platform}}\\[8mm]
+		}
+		
+		\underline{Using the Python client}\\[6mm]
+		{
+			\fontsize{22}{24}\selectfont
+			\texttt{\textbf{\textcolor{pyjup}{In [1]:} \textcolor{pygreen}{import} \textcolor{black}{nmpi}}}\newline
+			\texttt{\textbf{\textcolor{pyjup}{In [2]:} c = nmpi.\textcolor{pyblue}{Client}(\textcolor{pyred}{"myusername"})}}\newline
+			\texttt{\textbf{\textcolor{pyjup}{In [3]:} job\_id = c.\textcolor{pyblue}{submit\_job(}source=\textcolor{pyred}{"/path/to/my/code/PyNN\_script.py"},}}\newline
+			\texttt{\textbf{\phantom{In [3]: job\_id = c.\textcolor{pyblue}{submit\_job(}}platform=nmpi.\textcolor{pyblue}{BRAINSCALES},}}\newline
+			\texttt{\textbf{\phantom{In [3]: job\_id = c.submit\_job(}collab\_id=\textcolor{pyred}{"collab-name"})}}\newline
+			\texttt{\textbf{\textcolor{pyjup}{Out[3]:}} Job submitted}\newline
+			
+			\texttt{\textbf{\textcolor{pyjup}{In [4]:} c.\textcolor{pyblue}{job\_status(}job\_id)}}\newline
+			\texttt{\textbf{\textcolor{pyjup}{Out[4]:}} 'queued'}\newline
+			
+			\texttt{\textbf{\textcolor{pyjup}{In [5]:} job = c.\textcolor{pyblue}{get\_job(}job\_id, with\_log=\textcolor{pygreen}{True)}}}\newline
+			
+			\texttt{\textbf{\textcolor{pyjup}{In [6]:} c.\textcolor{pyblue}{download\_data(}job, local\_dir=\textcolor{pyred}{"/path/for/download"})}}\newline
+			\texttt{\textbf{\textcolor{pyjup}{Out[6]:}} ['/path/for/download/job\_123/sim\_results.png','/path/for/download/job\_123/reports.zip']}\newline
+		}
+		\vskip+6pt
+		\normalsize
+		An interactive mode is also available on:\\[-8mm]
+		\begin{columns}[t]
+			\column{.040\textwidth}
+		
+			\column{.960\textwidth}
+		\begin{itemize}
+			\item[$\rhd$] BrainScaleS: \texttt{\textbf{https://juphub.bioai.eu/}}
+			\item[$\rhd$] SpiNNaker: \texttt{\textbf{https://spinn-20.cs.man.ac.uk/}}		\\[6mm]
+		\end{itemize}
+		\phantom{-}
+	\end{columns}
+
+	\end{columns}
+
+\end{myblock2}

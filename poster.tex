@@ -1,0 +1,410 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+\usepackage[orientation=landscape,size=a0,scale=1.,debug]{packages/beamerposter}
+\usepackage{wasysym}
+\usepackage{eurosym}
+\usepackage{ulem}
+\usepackage{soul}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{shadow}
+\usepackage{tikz}
+\usepackage{eso-pic,rotating} 
+\usepackage[mathbf,mathcal,text-hat-accent]{euler} 
+\usepackage{amsmath} 
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{overpic}
+\usepackage[export]{adjustbox}
+\usepackage{ragged2e}
+\usepackage[french]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[most]{tcolorbox}
+
+
+% \usefonttheme[onlymath]{serif}
+
+\usetikzlibrary{arrows,positioning,shapes}
+\usetikzlibrary{tikzmark,positioning}
+
+\setbeamertemplate{items}[triangle]
+
+%%%%%%%%%%%%%%%%%%%% 
+
+\newcommand{\thetitleter}{CHyMENE}
+\newcommand{\thetitlebis}{EBRAINS Neuromorphic Computing}
+\newcommand{\thepurpose}{INCF Assembly 2021}
+\newcommand{\thedate}{N 19th, 2021}
+\newcommand{\thetitle}{Providing community access to large-scale neuromorphic computing systems}
+\newcommand{\theauthor}{Matthieu Sénoville}
+\newcommand{\theauthorbis}{Matthieu Sénoville, on behalf of EBRAINS Neuromorphic Computing Collaboration}
+\newcommand{\theauthorlist}{\underline{\textbf{M.~S\'{e}noville}}$^{1}$, H. Aguili$^{1}$, O. Ate\c{s}$^{1}$, J. Duperrier$^{1}$, D. Guarino$^{1}$, B. Lungsi Sharma$^{1}$, E. Müller$^{2}$, A.G.D. Rowley$^{3}$, A.P. Davison$^{1}$\\[3mm] and the EBRAINS Neuromorphic Computing Collaboration}
+\newcommand{\theaffiliations}{  $^{1}$Paris-Saclay Institute of Neuroscience, UMR 9197, Centre National de la Recherche Scientifique/Université Paris-Saclay, France\\
+                                $^{2}$Kirchhoff Institute for Physics, Heidelberg University, Heidelberg, Germany\\
+                                $^{3}$Advanced Processor Technologies Group, Department of Computer Science, University of Manchester, Manchester, United Kingdom}
+\newcommand{\theemail}{matthieu.senoville@cnrs.fr}
+\newcommand{\thelabo}{Paris-Saclay Institute of Neuroscience}
+\newcommand{\reducedlabo}{NeuroPSI}
+\newcommand{\urllabo}{https://ebrains.eu/service/neuromorphic-computing/}
+
+%%%%%%%%%%%%%%%%%%%% 
+
+\title{\Huge{\textbf{\thetitle}}}
+\author{\textbf{\Large{\theauthor}}}
+\institute{\large{\thelabo}}
+
+% \setbeamertemplate{headline}{  
+%     \begin{tikzpicture}[remember picture,overlay,thick]
+%       \node[draw=none,fill=none] at (\paperwidth*0.5,10cm) {\includegraphics[trim=0 23 0 90, clip, width=150cm]{/home/matthieu/Documents/HBP/SP9/logos/HBP_pure.pdf}};
+%     % \shade [left color=black,right color= red]
+%     % \useasboundingbox (0,0) rectangle (\paperwidth, -10cm);
+%     % \includegraphics[width=\paperwidth]{/home/matthieu/Documents/HBP/SP9/logos/HBP_pure.pdf}
+%     % \pgftext[at=\pgfpoint{0cm}{0cm}, left, base]{\pgfuseimage{/home/matthieu/Documents/HBP/SP9/logos/HBP_pure.pdf}}; 
+%     \end{tikzpicture}
+%     \vskip2.cm
+% \begin{center}
+% \usebeamercolor{title in headline}{\color{black}\textbf{\VERYHuge{\inserttitle}}\\[1ex]}
+% \vskip0.8cm
+%  			\center{
+      
+%             \usebeamercolor{author in headline}{\color{black}\normalsize{\textbf{\underline{M. Sénoville}, 
+%             O. Ate\c{s},
+%             J. Duperrier,
+%             D. Guarino,
+%             A.P. Davison
+%             }}}}
+%             \vskip0.9cm
+%             \usebeamercolor{institute in headline}{\color{black}
+%                 \center{\large{\textbf{Unité de Neurosciences, Information et Complexité, CNRS, Gif-sur-Yvette, France}}\\[11mm]
+%                 \normalsize{\textbf{and the HBP-SP9 Neuromorphic Computing Collaboration}}}
+%             }
+
+%      \end{center}
+% %     \vskip0.3cm
+% %   \end{beamercolorbox}
+%  }
+
+% \setbeamertemplate{footline}{
+%   \begin{flushright}
+%     \begin{minipage}{1.0\linewidth}
+%       % here, you can add some other logos
+%       \hfill \hfill
+%       %\includegraphics[width=8.7cm]{\packpath/logolpc.pdf}
+%       \vspace{+2.mm} %\includegraphics[height=4cm]{\imgpath/HBPLogo.png} 
+%       % \includegraphics[height=3.0cm]{\imgpath/HBP.png} \quad
+%       \includegraphics[height=2cm]{\imgpath/FraunhoferLOGO_0.jpg} \quad
+%       \includegraphics[height=2cm]{\imgpath/TU_Dresden.jpg} \quad
+%       \includegraphics[height=2cm]{\imgpath/CNRS.png}\quad      
+%       \includegraphics[height=2cm]{\imgpath/TU_Graz.png}  \quad
+%       \includegraphics[height=2cm]{\imgpath/university-of-hertfordshire2.png} \quad
+%       \includegraphics[height=2cm]{\imgpath/Heidelberg.png} \quad     
+%       \includegraphics[height=2cm]{\imgpath/istanbul.png} \quad
+%       \includegraphics[height=2cm]{\imgpath/Logo_EPFL.png} \quad
+%       \includegraphics[height=2cm]{\imgpath/middlesex.png}\quad
+%       \includegraphics[height=2cm]{\imgpath/manchester.png} \quad
+%       \includegraphics[height=2cm]{\imgpath/Kth_logo.png} \quad
+%       \includegraphics[height=2cm]{\imgpath/turin.jpeg} \quad     
+%       \includegraphics[height=2.8cm]{\imgpath/eu_cofunded_logo.png}
+%     \end{minipage}
+%   \end{flushright}
+%   \vspace{-42mm}  
+%   \begin{flushleft}
+%       \includegraphics[height=3.2cm]{\imgpath/HBP.png} \quad
+%   \end{flushleft}   
+%   \begin{beamercolorbox}[ht=2\baselineskip,leftskip=0.9cm,rightskip=0.6cm]{footline}
+%     \vspace{-4mm}
+%     \begin{small}\textbf{\theauthorbis} \end{small} \hfill \hfill
+%     \begin{small}\texttt{\textbf{\theemail}} \end{small} \hfill \hfill
+%     % \begin{small}\texttt{\textbf{\theemail}} \qquad and \qquad \texttt{\textbf{other email}}\end{small} \hfill \hfill
+%     \begin{small}\textbf{\urllabo} \end{small}
+%     \vspace{0.5cm}
+%   \end{beamercolorbox}
+%   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+%     \rule{0pt}{2pt}
+%   \end{beamercolorbox}
+% }
+
+
+% \newcommand{\thelineHBP}{
+% 	\setbeamercolor*{block body}{bg=white,fg=white}
+% 	\setbeamercolor*{block title}{fg=BurntOrange,bg=BurntOrange}
+% 		\begin{tikzpicture}[remember picture,overlay,thick]
+% 		\node[draw=none,fill=none] at (\paperwidth*0.5-1cm,0cm) {\includegraphics[trim=0 19 0 141., clip, width=150cm]{\imgpath/HBPlogo.png}};
+% 		\end{tikzpicture}
+% 	\setbeamercolor*{block body}{bg=lgray,fg=black}
+% 	\setbeamercolor*{block title}{fg=black,bg=sp9}
+% }
+\newtcolorbox{myblock22}[2][]{
+    % empty,
+    % beamer,
+    title=#2,fonttitle=\sffamily,
+  left=0mm,right=0mm,top=0mm,bottom=0mm,arc=0mm,
+%   height fill,
+  colback=white, colbacklower=white, colupper=black, colframe=green,
+  coltitle=black,title style={left color=green!70, right color=green!20},
+%   colback={top color=white, bottom color=black},
+%   opacityframe=0.25,
+  #1}
+
+\newtcolorbox{myblock1}[2][]{
+  beamer,
+  width=\textwidth-3pt,
+  enlarge left by=-0pt,
+  colback=structure,
+  colframe=white,
+  bottom=0pt,
+  top=-2pt,
+  left=0pt,
+  right=0pt,
+  toptitle=-1pt,
+  bottomtitle=-1pt,
+%   fonttitle=\normalfont,
+%   adjusted title=#2,
+    title=\hskip8mm #2,
+    coltitle=black,
+  interior titled code={
+    \shade[left color=ebrains1!80,right color=ebrains2!80]
+    % ,middle color=Salmon] 
+      (title.south west) --
+      (title.south east) {[rounded corners] -- 
+      (title.north east)  -- 
+      (title.north west)} --
+      (title.south west); 
+  }
+}
+
+\newtcolorbox{myblock2}[2][]{
+  beamer,
+  width=\textwidth-3pt,
+  enlarge left by=-0pt,
+  colback=structure,
+  colframe=white,
+  bottom=0pt,
+  top=-2pt,
+  left=0pt,
+  right=0pt,
+  toptitle=-1pt,
+  bottomtitle=-1pt,
+%   fonttitle=\normalfont,
+%   adjusted title=#2,
+    title=\hskip8mm #2,
+    coltitle=black,
+  interior titled code={
+    \shade[left color=ebrains2!80,right color=ebrains3!80]
+    % ,middle color=Salmon] 
+      (title.south west) --
+      (title.south east) {[rounded corners] -- 
+      (title.north east)  -- 
+      (title.north west)} --
+      (title.south west); 
+  }
+}
+
+\newcommand{\myitem}{$\bullet$}
+\newdimen\ratio
+\ratio=0.4mm
+\newdimen\x
+\x=0.3mm
+
+\usecolortheme{default}
+\useinnertheme{rounded}
+
+\newcommand{\headlineintro}{
+    \vskip22mm
+	\center{
+		\usebeamerfont*{frametitle}\textbf{\color{black}\VERYHuge{\textbf{\thetitle}}\\[8mm]}
+        % \fontsize{100}{120}\selectfont
+        % \usebeamerfont*{frametitle}\textbf{\color{black}\textbf{\thetitle}\\[8mm]}
+		{\color{black}\normalsize{\textbf{\theauthorlist}}}\\[4mm]
+		{\color{black}\footnotesize{\textbf{\theaffiliations}}}
+	}
+	\vskip16.mm %ou 10 si vert
+	\centering
+    \begin{tikzpicture}[remember picture,overlay,thick]
+        \node[draw=none,fill=none] at (\paperwidth*0.5,4mm) {\adjincludegraphics[trim=0 29.8 0 130.1, clip, width=1.5\paperwidth, cfbox=black 0.pt 0pt 0pt]{\imgpath/HBP_pure.png}};
+		% \node[draw=none,fill=none] at (\paperwidth*0.5,4mm) {\adjincludegraphics[trim=0 30 0 130.1, clip, width=1.5\paperwidth, cfbox=black 0.1pt 0pt 0pt]{\imgpath/HBP_pure.pdf}};
+	\end{tikzpicture}
+	% \begin{tikzpicture}[remember picture,overlay,thick]
+	% 	\node[draw=none,fill=none] at (\paperwidth*0.5-0.07cm,0cm) {\includegraphics[trim=0 50 0 189.5, clip, width=1.35\paperwidth]{\imgpath/EBRAINS_circle.pdf}};
+	% \end{tikzpicture}
+}
+
+
+% \newcommand{\headlineframetitle}{
+
+% 	\begin{columns}[t]
+% 		\column{0.2\paperwidth} 
+% 			\hskip1.mm \vskip1.mm
+% 			\includegraphics[trim=0 0 0 0, clip, width=2cm]{\imgpath/EBRAINS_all2.pdf} 
+% 		\column{0.7\paperwidth}
+% 			\begin{flushright}
+% 				\usebeamerfont*{frametitle}\textbf{
+% 					\insertframetitle
+% 				}
+% 			\end{flushright}
+% 	\end{columns}	
+
+% 	\vskip1.mm
+% 	\centering
+% 	\begin{tikzpicture}[remember picture,overlay,thick]
+% 		\node[draw=none,fill=none] at (\paperwidth*0.5-0.07cm,0cm) {\includegraphics[trim=0 50 0 189.5, clip, width=1.35\paperwidth]{\imgpath/EBRAINS_circle.pdf}};
+% 	\end{tikzpicture}
+% 	\hskip-1mm
+
+% }
+
+% \newcommand{\headlineframetitlebis}{
+% 	%   \leavevmode%
+% 	%   \hbox{%
+% 	%   \begin{beamercolorbox}[wd=\paperwidth,ht=8.25ex,dp=3.5ex]{headertitle}%
+% 	% 	% \begin{tikzpicture}[remember picture,overlay,thick]
+% 	% 	% 	\node[draw=none,fill=none] at (\paperwidth*0.0-0.00cm,0cm) {\includegraphics[trim=0 0 0 0, clip, width=4cm]{\imgpath/EBRAINS_all.pdf}};
+% 	% 	% \end{tikzpicture}
+% 	% 	% \hspace*{2em}%
+% 		% \Large\color{black}\thetitle %
+% 	% 	\begin{center}
+% 	%   %   \usebeamercolor{title in headline}{\color{black}\normalsize{\textbf{\thetitle}}\\}
+% 	% %   \vskip0.8cm
+% 	% 		\insertframetitle
+% 	% 			\end{center}
+% 	% 	% \hspace*{2em}%
+% 	% 	\end{beamercolorbox}%
+% 	\begin{columns}[t]
+% 		\column{0.2\paperwidth} 
+% 		\hskip1.mm \vskip1.mm
+% 		\includegraphics[trim=0 0 0 0, clip, width=2cm]{\imgpath/EBRAINS_all2.pdf} 
+% 		% \begin{beamercolorbox}[wd=0.8\paperwidth,ht=3.2ex,dp=0ex,left]{frametitle}
+% 			% \begin{tikzpicture}[remember picture,overlay,thick]
+% 			% \shade [left color=sp9,right color= sp9]
+% 			% (-2,-0.262) rectangle (.915\paperwidth,3.2ex);
+			
+% 			\column{0.7\paperwidth}
+% 			% \end{tikzpicture}
+% 			\begin{flushright}
+% 				\usebeamerfont*{frametitle}\textbf{
+% 					\insertframetitle
+% 					}
+% 			\end{flushright}
+% 		\end{columns}	
+
+% 			%   \end{beamercolorbox}
+% 		% \begin{beamercolorbox}[wd=0.90\paperwidth,ht=3.2ex,dp=0ex,left]{frametitle}
+% 			% \insertframetitle
+% 			% \usebeamerfont*{frametitle}\textbf{\frametitle}
+% 		% \end{beamercolorbox}\\
+% 		% \hfill 
+% 		% \insertframetitle
+% 		\vskip1.mm
+% 		\centering
+% 		\begin{tikzpicture}[remember picture,overlay,thick]
+% 			\node[draw=none,fill=none] at (\paperwidth*0.5-0.07cm,0cm) {\includegraphics[trim=0 50 0 189.5, clip, width=1.35\paperwidth]{\imgpath/EBRAINS_circle.pdf}};
+% 		\end{tikzpicture}
+% 		\hskip-1mm
+% 	  }
+
+
+% \setbeamertemplate{frametitle}{
+
+% }
+
+% \newcommand{\footlineframe}{ 
+% % \setbeamertemplate{footline}{
+% 	\leavevmode
+% 			\vskip-3mm
+% 			\begin{tikzpicture}[remember picture,overlay,thick]
+% 				% \node[draw=none,fill=none] at (\paperwidth*0.5,4mm) {\includegraphics[trim=0 560 0 1093, clip, width=1.5\paperwidth]{\imgpath/HBPLogo.png}};
+% 				\node[draw=none,fill=none] at (\paperwidth*0.5,4mm) {\adjincludegraphics[trim={0 30 0 130.1}, clip, width=1.5\paperwidth, cfbox=black .10pt 0pt 0pt]{\imgpath/HBP_pure.pdf}};
+% 			\end{tikzpicture}
+% 				\includegraphics[trim=0 0 0 0, clip, width=0.11\paperwidth]{\imgpath/HBP_large.png} 
+% 			\begin{beamercolorbox}[wd=.70\paperwidth,center]{footline1}
+% 				\begin{tikzpicture}[remember picture,overlay,thick]
+% 				\node[draw=none,fill=none] at (0,1.5mm) {		
+% 					\textcolor{DarkSlateGray4}{
+% 						\centering \thepurpose \hspace{2cm} \theemail \hspace{2cm} \insertframenumber{} / \inserttotalframenumber \hfill 
+% 			   		}
+% 			   };
+% 			\end{tikzpicture}	
+% 		\end{beamercolorbox}
+% 		\hfill \includegraphics[trim=0 0 0 0, clip, width=0.09\paperwidth]{\imgpath/eu_cofunded_logo.png}
+
+% }
+
+\newcommand{\footlinetitleslide}{
+	% \leavevmode
+    \vskip-4cm
+	\begin{tikzpicture}[remember picture,overlay,thick]
+        \node[draw=none,fill=none] at (\paperwidth*0.5,4mm) {\adjincludegraphics[trim=0 29.8 0 130.1, clip, width=1.5\paperwidth, cfbox=black 0.pt 0pt 0pt]{\imgpath/HBP_pure.png}};
+		% \node[draw=none,fill=none] at (\paperwidth*0.5,4mm) {\adjincludegraphics[trim=0 30 0 130.1, clip, width=1.5\paperwidth, cfbox=black 0.1pt 0pt 0pt]{\imgpath/HBP_pure.pdf}};
+	\end{tikzpicture}
+	\vskip-3.0mm
+    \phantom{$-$}\\
+    % \phantom{-}\\
+    % \phantom{-}\\
+    % \phantom{-}\\
+	\includegraphics[width=0.12\paperwidth]{\imgpath/HBP_large.png} \quad 
+	\includegraphics[height=23mm]{\imgpath/FraunhoferLOGO_0.jpg} \quad
+	\includegraphics[height=23mm]{\imgpath/logo_bern_uncroped.png} \quad
+	\includegraphics[height=23mm]{\imgpath/citec-uni.jpg} \quad
+	\includegraphics[height=23mm]{\imgpath/TU_Dresden.jpg} \quad
+	\includegraphics[height=23mm]{\imgpath/CNRS.png}\quad      
+	\includegraphics[height=23mm]{\imgpath/TU_Graz.png}  \quad
+	\includegraphics[height=23mm]{\imgpath/university-of-hertfordshire.png} \quad
+	\includegraphics[height=23mm]{\imgpath/Heidelberg.png} \quad     
+	\includegraphics[height=23mm]{\imgpath/istanbul.png} \quad
+	\includegraphics[height=23mm]{\imgpath/Logo_EPFL.png} \quad
+	\includegraphics[height=23mm]{\imgpath/middlesex.png}\quad
+	\includegraphics[height=23mm]{\imgpath/manchester.png} \quad
+	\includegraphics[height=23mm]{\imgpath/Kth_logo.png} \quad
+	\includegraphics[height=23mm]{\imgpath/unisussex.png} \quad
+	\includegraphics[height=23mm]{\imgpath/turin.jpeg} \quad
+	\includegraphics[width=0.09\paperwidth]{\imgpath/eu_cofunded_logo.png}
+    \begin{columns}[t]
+        \centering
+        \column{0.820\textwidth}
+        \column{0.16\textwidth}
+        \vskip-24mm
+        \scriptsize
+        This research has received funding from the European Union’s Horizon 2020 Framework Programme for Research
+         and Innovation under the Specific Grant Agreement No. 945539 (HBP SGA3), 785907 (HBP SGA2), 
+         720270 (HBP SGA1) and the FP7 grant number 604102 (HBP RUP).
+    \end{columns}
+}
+
+
+%%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+\setbeamertemplate{background}{}
+\setbeamertemplate{headline}{\headlineintro}
+\setbeamertemplate{footline}{\footlinetitleslide}
+    \begin{frame}{}
+        \vskip52mm
+        \begin{columns}[t]
+            \centering
+            \column{0.40\textwidth}
+                \include{\chappath/intro2machines}
+                \vskip-15mm
+                \include{\chappath/PyNN_INCF}
+                \vskip-15mm
+                \include{\chappath/TryIt}
+
+            \column{0.60\textwidth}
+                \include{\chappath/Web}
+                \vskip-15mm
+                \include{\chappath/Jupyter2}
+
+        \end{columns}
+        % \vskip50mm
+        % \phantom{f}
+        % \begin{columns}[t]
+        %     \centering
+        %     \column{0.40\textwidth}
+        %         \include{\chappath/PyNN_INCF}
+        %         % \include{\chappath/Web}
+        %     \column{0.6\textwidth}
+        %         \include{\chappath/Jupyter2}
+        % \end{columns}
+    \end{frame}
+\end{document}
